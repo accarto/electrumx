@@ -4128,3 +4128,28 @@ class FerriteTestnet(Ferrite):
         'enode2.ferritecoin.org s t',
         'enode3.ferritecoin.org s t',
     ]
+class Fortuneblock(Coin):
+     NAME = "Fortuneblock"
+     SHORTNAME = "FTB"
+     NET = "mainnet"
+     XPUB_VERBYTES = bytes.fromhex("0488b21e")
+     XPRV_VERBYTES = bytes.fromhex("0488ade4")
+     GENESIS_HASH = ('4e08a1f57e476d5d9ea3957dd4cc39ba'
+                     '5b49aee3b2e4eb40d16a827136da4aec')
+     P2PKH_VERBYTE = bytes.fromhex("24")
+     P2SH_VERBYTES = (bytes.fromhex("7d"),)
+     WIF_BYTE = bytes.fromhex("80")
+     TX_COUNT_HEIGHT = 50000
+     TX_COUNT = 100000
+     TX_PER_BLOCK = 3
+     RPC_PORT = 20776
+     PEERS = [
+         'sanjose.fortuneblock.xyz t',
+         'dubai.fortuneblock.xyz t',
+         'saopaulo.fortuneblock.xyz t',
+         'mumbai.fortuneblock.xyz t',
+         'tokyo.fortuneblock.xyz t',        
+     ]
+     SESSIONCLS = DashElectrumX
+     DAEMON = daemon.DashDaemon
+     DESERIALIZER = lib_tx_dash.DeserializerDash
